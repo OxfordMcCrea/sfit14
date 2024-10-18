@@ -129,6 +129,7 @@ def run_traj(q_in,q_out):
         #When no ids remain None has been added to queue, kill thread
         if cid is None:
             break
+        np.random.seed(cid)
         maxPIMMSslices = 0 #Is overwritten, no need to change
         ### Calculate initial velocities for ntraj trajectories
         sfit = array_functions() #Spawn the object that holds all relevant arrays
