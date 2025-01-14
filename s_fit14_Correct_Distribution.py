@@ -214,7 +214,8 @@ def run_traj(q_in,q_out):
         mag_wNOprime = np.sqrt(sfit.a['ecollprime'] * twoOmu) * mass_const
 
         # Angle between the x axis (NO propagation vector) and k
-        theta0 = np.arctan(sfit.a['wNO'][::,[0]] / (-sfit.a['wNO'][::,[1]])) + HPI
+        # theta0 = np.arctan(sfit.a['wNO'][::,[0]] / (-sfit.a['wNO'][::,[1]])) + HPI
+        theta0 = np.arctan(sfit.a['wNO'][::,[1]] / (-sfit.a['wNO'][::,[0]]))
 
         sfit.a['phicom'] = np.random.uniform(0.0, TPI, size=(sfit.gtraj, 1)) # Azimuthal Scattering Angle PhiT
         sfit.a['thetacom'] = np.random.uniform(0.0, 1.0, size=(sfit.gtraj, 1)) # Polar Scattering Angle
